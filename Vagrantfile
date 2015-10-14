@@ -1,4 +1,4 @@
-equire 'json'
+require 'json'
 require 'yaml'
 
 VAGRANTFILE_API_VERSION = "2"
