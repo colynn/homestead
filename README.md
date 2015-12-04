@@ -1,9 +1,32 @@
 # homestead
-###Included Software
+### Included Software
 * ubuntu/trusty64 14.04
+
+### Setup
+* Checkout and Init 
+<pre>$ git clone https://github.com/colynn/homestead.git homestead
+$ cd homestead
+$ bash init.sh</pre>
+
+* Setting Your Provider
+The provider key in your ~/.homestead/Homestead.yaml file </br>
+indicates which Vagrant provider should be used: virtualbox, vmware_fusion, or vmware_workstation. </br>
+You may set this to whichever provider you prefer:
+<pre>provider: virtualbox</pre>
+
+* Setting Your SSH Key
+<pre>$ ssh-keygen -t rsa </pre>
+
+* Defind Your Box Name
+<pre>$ grep "vm.box"  ./scripts/homestead.rb -A1 -B1
+    # Configure The Box
+    config.vm.box = settings["box"] ||= "ubuntu/trusty64"
+    config.vm.hostname = settings["hostname"] ||= "dev.example.com"</pre>
+note: settings["box"], you can define 
 
 ### Daily Usage
 You can SSH into your virtual machine by issuing the vagrant ssh terminal command from your Homestead directory.</br>
 But, since you will probably need to SSH into your Homestead machine frequently, consider creating an "alias" on your host machine to quickly SSH into the Homestead box. </br>
 Once you create this alias, you can simply use the "vm" command to SSH into your Homestead machine from anywhere on your system:
 <pre>alias vm="ssh vagrant@127.0.0.1 -p 2222"</pre>
+
