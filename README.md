@@ -18,7 +18,7 @@ You may set this to whichever provider you prefer:
 <pre>$ ssh-keygen -t rsa </pre>
 
 * Defind Your Box Name</br>
-''note: If you want to use the custom local box or other box from [https://atlas.hashicorp.com/boxes/search this site].
+note: If you want to use the custom local box or other box from this site(https://atlas.hashicorp.com/boxes/search this site).
 <pre>$ grep "vm.box"  ./scripts/homestead.rb -A1 -B1
     # Configure The Box
     config.vm.box = settings["box"] ||= "ubuntu/trusty64"
