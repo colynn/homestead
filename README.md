@@ -29,7 +29,11 @@ The folders property of the ~/.homestead/Homestead.yaml file lists all of the fo
      \- map: ~/Code
         to: /home/vagrant/Code
 </pre>
+### Launching The Vagrant Box
 
+Once you have edited the ~/.homestead/Homestead.yaml to your liking, run the vagrant up command from your Homestead directory. Vagrant will boot the virtual machine and automatically configure your shared folders and Nginx sites.
+
+To destroy the machine, you may use the vagrant destroy --force command.
 ### Daily Usage
 You can SSH into your virtual machine by issuing the vagrant ssh terminal command from your Homestead directory.</br>
 But, since you will probably need to SSH into your Homestead machine frequently, consider creating an "alias" on your host machine to quickly SSH into the Homestead box. </br>
