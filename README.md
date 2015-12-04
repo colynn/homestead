@@ -23,7 +23,12 @@ note: If you want to use the custom local box or other box from this site(https:
     # Configure The Box
     config.vm.box = settings["box"] ||= "ubuntu/trusty64"
     config.vm.hostname = settings["hostname"] ||= "dev.example.com"</pre>
-
+* Configuring Shared Folders</br>
+The folders property of the ~/.homestead/Homestead.yaml file lists all of the folders you wish to share with your Homestead environment. As files within these folders are changed, they will be kept in sync between your local machine and the Homestead environment. You may configure as many shared folders as necessary:
+<pre>folders:
+     \- map: ~/Code
+        to: /home/vagrant/Code
+</pre>
 
 ### Daily Usage
 You can SSH into your virtual machine by issuing the vagrant ssh terminal command from your Homestead directory.</br>
