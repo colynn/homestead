@@ -2,7 +2,12 @@
 ### Included Software
 * ubuntu/trusty64 14.04
 
-### Setup
+### Installation & Configuring 
+* First Steps</br>
+Before launching your Homestead environment, you must install VirtualBox 5.x or VMWare as well as Vagrant. All of these software packages provide easy-to-use visual installers for all popular operating systems.</br>
+To use the VMware provider, you will need to purchase both VMware Fusion / Workstation and the VMware Vagrant plug-in. VMware provides much faster shared folder performance out of the box.
+
+
 * Checkout and Init 
 <pre>$ git clone https://github.com/colynn/homestead.git homestead
 $ cd homestead
@@ -18,11 +23,13 @@ You may set this to whichever provider you prefer:
 <pre>$ ssh-keygen -t rsa </pre>
 
 * Defind Your Box Name</br>
-note: If you want to use the custom local box or other box from this site(https://atlas.hashicorp.com/boxes/search).
 <pre>$ grep "vm.box"  ./scripts/homestead.rb -A1 -B1
     # Configure The Box
     config.vm.box = settings["box"] ||= "ubuntu/trusty64"
     config.vm.hostname = settings["hostname"] ||= "dev.example.com"</pre>
+Note: If you want to use the custom local box(can download from http://www.vagrantbox.es/) or other virtualbox from https://atlas.hashicorp.com/boxes/search, you can change the setting of 'config.vm.box', as you saw,the default value is 'ubuntu/trusty64'.</br>
+And you may use this command to add the local box.
+<pre>vagrant box add [customer-box-name] [the local virtualbox file]</pre>    
 * Configuring Shared Folders</br>
 The folders property of the ~/.homestead/Homestead.yaml file lists all of the folders you wish to share with your Homestead environment. As files within these folders are changed, they will be kept in sync between your local machine and the Homestead environment. You may configure as many shared folders as necessary:
 <pre>folders:
