@@ -31,7 +31,16 @@ class Homestead
       vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
       vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
-
+    
+    # Configure A Few VMware Settings
+    ["vmware_fusion", "vmware_workstation"].each do |vmware|
+      config.vm.provider vmware do |v|
+        v.vmx["displayName"] = "homestead"
+        v.vmx["memsize"] = settings["memory"] ||= 2048
+        v.vmx["numvcpus"] = settings["cpus"] ||= 1
+        v.vmx["guestOS"] = "ubuntu-64"
+      end
+    end
 
     # Configure A Few Parallels Settings
     config.vm.provider "parallels" do |v|
