@@ -29,6 +29,7 @@ The folders property of the ~/.homestead/Homestead.yaml file lists all of the fo
      \- map: ~/Code
         to: /home/vagrant/Code
 </pre>
+
 ### Launching The Vagrant Box
 
 Once you have edited the ~/.homestead/Homestead.yaml to your liking, run the vagrant up command from your Homestead directory. Vagrant will boot the virtual machine and automatically configure your shared folders and Nginx sites.
