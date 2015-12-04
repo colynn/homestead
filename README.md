@@ -17,12 +17,13 @@ You may set this to whichever provider you prefer:
 * Setting Your SSH Key
 <pre>$ ssh-keygen -t rsa </pre>
 
-* Defind Your Box Name
+* Defind Your Box Name</br>
+''note: If you want to use the custom local box or other box from [https://atlas.hashicorp.com/boxes/search this site].
 <pre>$ grep "vm.box"  ./scripts/homestead.rb -A1 -B1
     # Configure The Box
     config.vm.box = settings["box"] ||= "ubuntu/trusty64"
     config.vm.hostname = settings["hostname"] ||= "dev.example.com"</pre>
-note: settings["box"], you can define 
+
 
 ### Daily Usage
 You can SSH into your virtual machine by issuing the vagrant ssh terminal command from your Homestead directory.</br>
